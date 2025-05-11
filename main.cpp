@@ -9,7 +9,7 @@ void tampilkanMenu() {
     cout << "Pilih operasi:\n";
     cout << "1. Penjumlahan\n";
     cout << "2. Pengurangan\n";
-    cout << "3. Perkalian\n";
+    // cout << "3. Perkalian\n";
     cout << "4. Pembagian\n";
     cout << "5. Keluar\n";
 }
