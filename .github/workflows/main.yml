@@ -34,7 +34,7 @@ jobs:
         echo "5" >> input.txt      # Operation: Keluar (Exit)
     
     - name: Compile Code
-      run: g++ -o main main.cppA
+      run: g++ -o main main.cpp
 
     - name: Run Program
       run: ./main < input.txt
