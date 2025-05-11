@@ -1,0 +1,40 @@
+name: CI Pipeline C++ 
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Install Dependencies
+      run: sudo apt-get update && sudo apt-get install -y g++
+
+    - name: Create Input File
+      run: |
+        echo "1" > input.txt       # Operation: Penjumlahan (Addition)
+        echo "5" >> input.txt      # First number
+        echo "3" >> input.txt      # Second number
+        echo "2" >> input.txt      # Operation: Pengurangan (Subtraction)
+        echo "8" >> input.txt      # First number
+        echo "3" >> input.txt      # Second number
+        echo "3" >> input.txt      # Operation: Perkalian (Multiplication)
+        echo "4" >> input.txt      # First number
+        echo "2" >> input.txt      # Second number
+        echo "4" >> input.txt      # Operation: Pembagian (Division)
+        echo "10" >> input.txt     # First number
+        echo "2" >> input.txt      # Second number
+        echo "5" >> input.txt      # Operation: Keluar (Exit)
+    
+    - name: Compile Code
+      run: g++ -o main main.cpp
+
+    - name: Run Program
+      run: ./main < input.txt
