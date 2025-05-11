@@ -1,6 +1,6 @@
 name: CI Pipeline C++ 
 
-onahhhhhhhhhhhhhhhh:
+on:
   push:
     branches: ["master"]
   pull_request:
